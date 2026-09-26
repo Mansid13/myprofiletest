@@ -1,157 +1,278 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aditya Singh | Profile</title>
+    <title>Mansi Dubey | Profile</title>
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
         }
+
+
+        /* =========================
+           BODY
+        ========================= */
 
         body {
             min-height: 100vh;
-            background: #08080d;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(124, 58, 237, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(37, 99, 235, 0.15),
+                    transparent 30%
+                ),
+                #08080d;
+
+            color: white;
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            padding: 40px 20px;
+
+            /* IMPORTANT:
+               keeps the page scrollable */
+            display: block;
+
+            overflow-x: hidden;
         }
+
+
+        /* =========================
+           MAIN PROFILE
+        ========================= */
 
         .profile {
             width: 100%;
-            max-width: 1050px;
-            background: #111118;
-            border: 1px solid #242431;
-            border-radius: 25px;
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            background: rgba(17, 17, 24, 0.92);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 28px;
+
             overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.55);
         }
 
-        /* ================= COVER ================= */
+
+        /* =========================
+           COVER
+        ========================= */
 
         .cover {
-            height: 230px;
+            height: 240px;
+
             position: relative;
+
             overflow: hidden;
 
             background:
-                linear-gradient(135deg, #6d28d9, #2563eb);
+                linear-gradient(
+                    135deg,
+                    #6d28d9,
+                    #4f46e5,
+                    #2563eb
+                );
         }
+
 
         .cover::before {
             content: "";
+
             position: absolute;
 
-            width: 350px;
-            height: 350px;
+            width: 400px;
+            height: 400px;
 
             border-radius: 50%;
 
             background: rgba(255,255,255,0.08);
 
-            top: -180px;
-            right: 50px;
+            top: -230px;
+            right: -50px;
         }
+
 
         .cover::after {
             content: "";
+
             position: absolute;
 
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 300px;
 
             border-radius: 50%;
 
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.07);
 
-            bottom: -160px;
+            bottom: -220px;
             left: 100px;
         }
 
-        /* ================= CONTENT ================= */
 
-        .content {
-            padding: 0 50px 45px;
+        /* Decorative lines */
+
+        .cover-lines {
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.15;
+
+            background-image:
+                linear-gradient(
+                    45deg,
+                    transparent 48%,
+                    white 49%,
+                    white 51%,
+                    transparent 52%
+                );
+
+            background-size: 70px 70px;
         }
 
-        /* ================= PROFILE HEADER ================= */
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            padding: 0 55px 55px;
+        }
+
+
+        /* =========================
+           PROFILE HEADER
+        ========================= */
 
         .profile-header {
             display: flex;
+
             align-items: flex-end;
+
             gap: 25px;
 
-            margin-top: -75px;
+            margin-top: -80px;
 
             position: relative;
-            z-index: 2;
+
+            z-index: 5;
         }
 
-        /* ================= PROFILE PHOTO ================= */
+
+        /* =========================
+           AVATAR
+        ========================= */
 
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 155px;
+            height: 155px;
+
+            flex-shrink: 0;
 
             border-radius: 50%;
 
-            border: 6px solid #111118;
+            border: 7px solid #111118;
 
             background:
-                linear-gradient(135deg, #8b5cf6, #2563eb);
+                linear-gradient(
+                    135deg,
+                    #8b5cf6,
+                    #2563eb
+                );
 
             display: flex;
-            justify-content: center;
+
             align-items: center;
 
-            font-size: 48px;
-            font-weight: 700;
+            justify-content: center;
 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            font-size: 48px;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.55);
         }
 
-        /* ================= NAME ================= */
+
+        /* =========================
+           NAME
+        ========================= */
 
         .name {
             padding-bottom: 12px;
         }
 
+
         .name h1 {
-            font-size: 36px;
+            font-size: 38px;
+
+            font-weight: 750;
+
             letter-spacing: -1px;
         }
 
+
         .name p {
-            color: #9b9baa;
-            margin-top: 5px;
+            color: #a5a5b5;
+
+            font-size: 15px;
+
+            margin-top: 6px;
         }
+
+
+        /* =========================
+           STATUS
+        ========================= */
 
         .status {
             display: inline-flex;
+
             align-items: center;
-            gap: 7px;
 
-            margin-top: 10px;
+            gap: 8px;
 
-            padding: 6px 12px;
+            margin-top: 12px;
+
+            padding: 7px 13px;
 
             border-radius: 20px;
 
-            background: rgba(34,197,94,0.1);
+            background: rgba(34,197,94,0.10);
+
             color: #4ade80;
 
             font-size: 12px;
         }
 
-        .dot {
+
+        .status-dot {
             width: 8px;
             height: 8px;
 
@@ -159,147 +280,210 @@
 
             background: #4ade80;
 
-            box-shadow: 0 0 10px #4ade80;
+            box-shadow:
+                0 0 12px #4ade80;
         }
 
-        /* ================= BUTTON ================= */
+
+        /* =========================
+           BUTTON
+        ========================= */
 
         .actions {
             margin-left: auto;
+
             padding-bottom: 12px;
         }
 
-        .button {
-            padding: 12px 20px;
 
+        .edit-button {
             border: none;
-            border-radius: 12px;
 
             color: white;
 
-            background: linear-gradient(
-                135deg,
-                #7c3aed,
-                #2563eb
-            );
+            padding: 13px 20px;
+
+            border-radius: 12px;
 
             cursor: pointer;
+
+            font-size: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #2563eb
+                );
 
             transition: 0.3s;
         }
 
-        .button:hover {
+
+        .edit-button:hover {
             transform: translateY(-3px);
 
             box-shadow:
-                0 10px 30px rgba(99,102,241,0.4);
+                0 12px 30px rgba(99,102,241,0.4);
         }
 
-        /* ================= STATS ================= */
+
+        /* =========================
+           STATS
+        ========================= */
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
 
-            margin-top: 35px;
+            grid-template-columns:
+                repeat(3, 1fr);
 
-            background: #171720;
+            margin-top: 38px;
 
-            border: 1px solid #252532;
+            background: rgba(255,255,255,0.035);
 
-            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 20px;
+
+            overflow: hidden;
         }
+
 
         .stat {
             text-align: center;
-            padding: 20px;
 
-            border-right: 1px solid #252532;
+            padding: 23px;
+
+            border-right:
+                1px solid rgba(255,255,255,0.08);
         }
+
 
         .stat:last-child {
             border-right: none;
         }
 
+
         .stat h2 {
-            font-size: 26px;
+            font-size: 28px;
         }
+
 
         .stat p {
             color: #777789;
+
             font-size: 13px;
+
             margin-top: 5px;
         }
 
-        /* ================= GRID ================= */
+
+        /* =========================
+           GRID
+        ========================= */
 
         .grid {
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
 
-            gap: 20px;
+            gap: 22px;
 
             margin-top: 25px;
         }
 
+
+        /* =========================
+           CARDS
+        ========================= */
+
         .card {
-            background: #171720;
+            background:
+                rgba(255,255,255,0.035);
 
-            border: 1px solid #252532;
+            border:
+                1px solid rgba(255,255,255,0.08);
 
-            border-radius: 18px;
+            border-radius: 20px;
 
-            padding: 25px;
+            padding: 26px;
 
-            transition: 0.3s;
+            transition:
+                transform 0.3s,
+                border-color 0.3s,
+                background 0.3s;
         }
+
 
         .card:hover {
             transform: translateY(-5px);
 
-            border-color: #4c4c6a;
+            background:
+                rgba(255,255,255,0.055);
 
-            box-shadow:
-                0 15px 35px rgba(0,0,0,0.25);
+            border-color:
+                rgba(139,92,246,0.35);
         }
+
 
         .card h3 {
-            font-size: 18px;
+            font-size: 19px;
 
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
         }
 
-        .title-icon {
+
+        .star {
             color: #8b5cf6;
+
+            font-size: 18px;
         }
 
-        /* ================= ABOUT ================= */
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
-            color: #a4a4b2;
-
-            line-height: 1.7;
+            color: #a7a7b7;
 
             font-size: 14px;
+
+            line-height: 1.8;
         }
 
-        /* ================= SKILLS ================= */
+
+        /* =========================
+           SKILLS
+        ========================= */
 
         .skills {
             display: flex;
+
             flex-wrap: wrap;
-            gap: 9px;
+
+            gap: 10px;
         }
 
+
         .skill {
-            padding: 8px 13px;
+            padding: 9px 14px;
 
             border-radius: 20px;
 
-            background: #20202c;
+            background:
+                rgba(124,58,237,0.10);
 
-            border: 1px solid #303044;
+            border:
+                1px solid rgba(124,58,237,0.25);
 
             color: #c4b5fd;
 
@@ -308,138 +492,249 @@
             transition: 0.25s;
         }
 
-        .skill:hover {
-            background: #302550;
 
+        .skill:hover {
             transform: scale(1.05);
+
+            background:
+                rgba(124,58,237,0.22);
         }
 
-        /* ================= PROJECTS ================= */
+
+        /* =========================
+           PROJECTS
+        ========================= */
 
         .project {
-            padding: 13px 0;
+            padding: 15px 0;
 
-            border-bottom: 1px solid #292934;
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
         }
+
+
+        .project:first-child {
+            padding-top: 0;
+        }
+
 
         .project:last-child {
             border-bottom: none;
+
+            padding-bottom: 0;
         }
+
 
         .project h4 {
             font-size: 15px;
+
+            margin-bottom: 5px;
         }
+
 
         .project p {
-            color: #858594;
+            color: #858596;
 
-            font-size: 12px;
+            font-size: 13px;
 
-            margin-top: 4px;
+            line-height: 1.5;
         }
 
-        /* ================= DETAILS ================= */
+
+        /* =========================
+           DETAILS
+        ========================= */
 
         .details {
             display: flex;
 
             flex-direction: column;
 
-            gap: 14px;
+            gap: 16px;
         }
+
 
         .detail {
             display: flex;
 
             align-items: center;
 
-            gap: 12px;
+            gap: 13px;
         }
 
+
         .detail-icon {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
+
+            flex-shrink: 0;
 
             display: flex;
 
-            justify-content: center;
             align-items: center;
 
-            background: #20202c;
+            justify-content: center;
 
-            border-radius: 10px;
+            border-radius: 11px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            font-size: 18px;
         }
 
-        .detail small {
+
+        .detail-text small {
             display: block;
 
-            color: #686878;
+            color: #686879;
 
             font-size: 11px;
+
+            margin-bottom: 3px;
         }
 
-        .detail span {
-            color: #c8c8d3;
+
+        .detail-text span {
+            color: #d1d1dc;
 
             font-size: 14px;
         }
 
-        /* ================= SOCIALS ================= */
+
+        /* =========================
+           SOCIAL LINKS
+        ========================= */
 
         .socials {
             display: flex;
 
             gap: 12px;
+
+            flex-wrap: wrap;
         }
 
+
         .social {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
 
             display: flex;
 
-            justify-content: center;
             align-items: center;
 
-            border-radius: 12px;
+            justify-content: center;
 
-            background: #20202c;
+            border-radius: 13px;
 
-            border: 1px solid #303044;
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
 
             color: white;
 
             text-decoration: none;
 
-            font-weight: 600;
+            font-size: 14px;
+
+            font-weight: 700;
 
             transition: 0.3s;
         }
 
-        .social:hover {
-            background: #6366f1;
 
+        .social:hover {
             transform: translateY(-5px);
+
+            background: #6366f1;
 
             box-shadow:
                 0 10px 25px rgba(99,102,241,0.3);
         }
 
-        /* ================= RESPONSIVE ================= */
 
-        @media(max-width: 700px) {
+        /* =========================
+           LEARNING
+        ========================= */
+
+        .learning {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 13px;
+        }
+
+
+        .learning-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            color: #aaaabb;
+
+            font-size: 14px;
+        }
+
+
+        .learning-number {
+            width: 30px;
+            height: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(124,58,237,0.12);
+
+            color: #a78bfa;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            text-align: center;
+
+            color: #555565;
+
+            font-size: 12px;
+
+            margin-top: 30px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
 
             body {
-                padding: 15px;
+                padding: 20px 12px;
             }
 
-            .cover {
-                height: 180px;
-            }
 
             .content {
-                padding: 0 20px 30px;
+                padding:
+                    0 22px 35px;
             }
+
 
             .profile-header {
                 flex-direction: column;
@@ -449,389 +744,569 @@
                 text-align: center;
             }
 
+
             .name {
-                padding: 0;
+                padding-bottom: 0;
             }
 
+
             .actions {
-                margin: 0;
-                padding: 0;
+                margin-left: 0;
+
+                padding-bottom: 0;
             }
+
 
             .grid {
                 grid-template-columns: 1fr;
             }
 
+
             .stats {
                 grid-template-columns: 1fr;
             }
 
+
             .stat {
                 border-right: none;
 
-                border-bottom: 1px solid #252532;
+                border-bottom:
+                    1px solid rgba(255,255,255,0.08);
             }
+
 
             .stat:last-child {
                 border-bottom: none;
             }
         }
+
+
+        @media (max-width: 500px) {
+
+            .cover {
+                height: 180px;
+            }
+
+
+            .avatar {
+                width: 125px;
+                height: 125px;
+
+                font-size: 38px;
+
+                margin-top: 10px;
+            }
+
+
+            .name h1 {
+                font-size: 29px;
+            }
+
+
+            .name p {
+                font-size: 13px;
+            }
+
+
+            .card {
+                padding: 21px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<div class="profile">
 
-    <!-- COVER -->
-    <div class="cover"></div>
+    <div class="profile">
 
 
-    <div class="content">
+        <!-- ================= COVER ================= -->
 
-        <!-- PROFILE HEADER -->
+        <div class="cover">
 
-        <div class="profile-header">
-
-            <div class="avatar">
-                AS
-            </div>
-
-
-            <div class="name">
-
-                <h1>Aditya Singh</h1>
-
-                <p>
-                    IT Student • Full Stack Developer • Tech Enthusiast
-                </p>
-
-                <div class="status">
-
-                    <span class="dot"></span>
-
-                    Open to opportunities
-
-                </div>
-
-            </div>
-
-
-            <div class="actions">
-
-                <button class="button">
-                    ✨ Edit Profile
-                </button>
-
-            </div>
+            <div class="cover-lines"></div>
 
         </div>
 
 
-        <!-- STATS -->
+        <!-- ================= CONTENT ================= -->
 
-        <div class="stats">
-
-            <div class="stat">
-
-                <h2>12+</h2>
-
-                <p>Projects</p>
-
-            </div>
+        <div class="content">
 
 
-            <div class="stat">
+            <!-- ================= PROFILE HEADER ================= -->
 
-                <h2>8+</h2>
-
-                <p>Technologies</p>
-
-            </div>
+            <div class="profile-header">
 
 
-            <div class="stat">
-
-                <h2>∞</h2>
-
-                <p>Things to Learn</p>
-
-            </div>
-
-        </div>
+                <div class="avatar">
+                    AS
+                </div>
 
 
-        <!-- CONTENT GRID -->
+                <div class="name">
 
-        <div class="grid">
+                    <h1>
+                        Mansi Dubey
+                    </h1>
 
-
-            <!-- ABOUT -->
-
-            <div class="card">
-
-                <h3>
-                    <span class="title-icon">✦</span>
-                    About Me
-                </h3>
-
-                <p class="about">
-
-                    Hey! I'm MANSI👋
-
-                    I'm an IT student and developer who enjoys
-                    building real-world applications and learning
-                    new technologies.
-
-                    I work with both frontend and backend technologies
-                    and love turning ideas into working projects.
-
-                    Currently exploring full-stack development,
-                    Java, JavaScript, React, Node.js and Spring Boot.
-
-                </p>
-
-            </div>
+                    <p>
+                        IT Student • Full Stack Developer • Tech Enthusiast
+                    </p>
 
 
-            <!-- SKILLS -->
+                    <div class="status">
 
-            <div class="card">
+                        <span class="status-dot"></span>
 
-                <h3>
-                    <span class="title-icon">✦</span>
-                    Skills
-                </h3>
+                        Open to opportunities
 
-                <div class="skills">
-
-                    <div class="skill">JavaScript</div>
-
-                    <div class="skill">React</div>
-
-                    <div class="skill">Node.js</div>
-
-                    <div class="skill">Express.js</div>
-
-                    <div class="skill">Java</div>
-
-                    <div class="skill">Spring Boot</div>
-
-                    <div class="skill">C++</div>
-
-                    <div class="skill">MySQL</div>
-
-                    <div class="skill">MongoDB</div>
-
-                    <div class="skill">Git & GitHub</div>
+                    </div>
 
                 </div>
 
+
+                <div class="actions">
+
+                    <button class="edit-button"
+                            onclick="alert('Profile editing coming soon!')">
+
+                        ✨ Edit Profile
+
+                    </button>
+
+                </div>
+
+
             </div>
 
 
-            <!-- PROJECTS -->
+            <!-- ================= STATS ================= -->
 
-            <div class="card">
-
-                <h3>
-                    <span class="title-icon">✦</span>
-                    Projects
-                </h3>
+            <div class="stats">
 
 
-                <div class="project">
+                <div class="stat">
 
-                    <h4>🚀 CommunityOS</h4>
+                    <h2>12+</h2>
 
                     <p>
-                        Community platform with volunteering,
-                        blood donation and emergency assistance.
+                        Projects
                     </p>
 
                 </div>
 
 
-                <div class="project">
+                <div class="stat">
 
-                    <h4>📊 Employee Attendance System</h4>
+                    <h2>8+</h2>
 
                     <p>
-                        Full-stack attendance system using
-                        Spring Boot and MySQL.
+                        Technologies
                     </p>
 
                 </div>
 
 
-                <div class="project">
+                <div class="stat">
 
-                    <h4>🤖 AI Projects</h4>
+                    <h2>∞</h2>
 
                     <p>
-                        Exploring AI-powered applications,
-                        assistants and automation.
+                        Things to Learn
                     </p>
 
                 </div>
 
-            </div>
-
-
-            <!-- DETAILS -->
-
-            <div class="card">
-
-                <h3>
-                    <span class="title-icon">✦</span>
-                    Details
-                </h3>
-
-
-                <div class="details">
-
-
-                    <div class="detail">
-
-                        <div class="detail-icon">
-                            🎓
-                        </div>
-
-                        <div>
-
-                            <small>Branch</small>
-
-                            <span>Information Technology</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail">
-
-                        <div class="detail-icon">
-                            💻
-                        </div>
-
-                        <div>
-
-                            <small>Focus</small>
-
-                            <span>Full Stack Development</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail">
-
-                        <div class="detail-icon">
-                            🌐
-                        </div>
-
-                        <div>
-
-                            <small>Interests</small>
-
-                            <span>Web Development & AI</span>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
 
             </div>
 
 
-            <!-- SOCIAL -->
+            <!-- ================= MAIN GRID ================= -->
 
-            <div class="card">
-
-                <h3>
-
-                    <span class="title-icon">✦</span>
-
-                    Connect With Me
-
-                </h3>
+            <div class="grid">
 
 
-                <div class="socials">
+                <!-- ABOUT -->
 
-                    <a
-                        href="https://github.com/"
-                        target="_blank"
-                        class="social">
-                        GH
-                    </a>
+                <div class="card">
 
+                    <h3>
 
-                    <a
-                        href="https://linkedin.com/"
-                        target="_blank"
-                        class="social">
-                        in
-                    </a>
+                        <span class="star">✦</span>
+
+                        About Me
+
+                    </h3>
 
 
-                    <a
-                        href="#"
-                        class="social">
-                        X
-                    </a>
+                    <p class="about">
 
+                        Hey! I'm Mansi 👋
 
-                    <a
-                        href="mailto:aditya@example.com"
-                        class="social">
-                        @
-                    </a>
+                        I'm an IT student and developer who enjoys
+                        building real-world applications and learning
+                        new technologies.
+
+                        I work with both frontend and backend technologies
+                        and love turning ideas into working projects.
+
+                        Currently exploring full-stack development,
+                        JavaScript, React, Node.js, Java and Spring Boot.
+
+                    </p>
 
                 </div>
+
+
+                <!-- SKILLS -->
+
+                <div class="card">
+
+                    <h3>
+
+                        <span class="star">✦</span>
+
+                        Skills
+
+                    </h3>
+
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            JavaScript
+                        </span>
+
+                        <span class="skill">
+                            React
+                        </span>
+
+                        <span class="skill">
+                            Node.js
+                        </span>
+
+                        <span class="skill">
+                            Express.js
+                        </span>
+
+                        <span class="skill">
+                            Java
+                        </span>
+
+                        <span class="skill">
+                            Spring Boot
+                        </span>
+
+                        <span class="skill">
+                            C++
+                        </span>
+
+                        <span class="skill">
+                            MySQL
+                        </span>
+
+                        <span class="skill">
+                            MongoDB
+                        </span>
+
+                        <span class="skill">
+                            Git & GitHub
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECTS -->
+
+                <div class="card">
+
+                    <h3>
+
+                        <span class="star">✦</span>
+
+                        Projects
+
+                    </h3>
+
+
+                    <div class="project">
+
+                        <h4>
+                            🚀 CommunityOS
+                        </h4>
+
+                        <p>
+                            A community platform with volunteering,
+                            blood donation and emergency assistance
+                            features.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <h4>
+                            📊 Employee Attendance System
+                        </h4>
+
+                        <p>
+                            Full-stack employee attendance management
+                            system using Spring Boot and MySQL.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <h4>
+                            🤖 AI Projects
+                        </h4>
+
+                        <p>
+                            Exploring AI-powered applications,
+                            assistants and automation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DETAILS -->
+
+                <div class="card">
+
+                    <h3>
+
+                        <span class="star">✦</span>
+
+                        Details
+
+                    </h3>
+
+
+                    <div class="details">
+
+
+                        <div class="detail">
+
+                            <div class="detail-icon">
+                                🎓
+                            </div>
+
+                            <div class="detail-text">
+
+                                <small>
+                                    Branch
+                                </small>
+
+                                <span>
+                                    Information Technology
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <div class="detail-icon">
+                                💻
+                            </div>
+
+                            <div class="detail-text">
+
+                                <small>
+                                    Focus
+                                </small>
+
+                                <span>
+                                    Full Stack Development
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <div class="detail-icon">
+                                🌐
+                            </div>
+
+                            <div class="detail-text">
+
+                                <small>
+                                    Interests
+                                </small>
+
+                                <span>
+                                    Web Development & AI
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- CURRENTLY LEARNING -->
+
+                <div class="card">
+
+                    <h3>
+
+                        <span class="star">✦</span>
+
+                        Currently Learning
+
+                    </h3>
+
+
+                    <div class="learning">
+
+
+                        <div class="learning-item">
+
+                            <span class="learning-number">
+                                01
+                            </span>
+
+                            Data Structures & Algorithms
+
+                        </div>
+
+
+                        <div class="learning-item">
+
+                            <span class="learning-number">
+                                02
+                            </span>
+
+                            Advanced JavaScript
+
+                        </div>
+
+
+                        <div class="learning-item">
+
+                            <span class="learning-number">
+                                03
+                            </span>
+
+                            Spring Boot
+
+                        </div>
+
+
+                        <div class="learning-item">
+
+                            <span class="learning-number">
+                                04
+                            </span>
+
+                            AWS & Cloud
+
+                        </div>
+
+
+                        <div class="learning-item">
+
+                            <span class="learning-number">
+                                05
+                            </span>
+
+                            AI & Automation
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOCIAL -->
+
+                <div class="card">
+
+                    <h3>
+
+                        <span class="star">✦</span>
+
+                        Connect With Me
+
+                    </h3>
+
+
+                    <div class="socials">
+
+
+                        <a
+                            href="https://github.com/"
+                            target="_blank"
+                            class="social">
+
+                            GH
+
+                        </a>
+
+
+                        <a
+                            href="https://linkedin.com/"
+                            target="_blank"
+                            class="social">
+
+                            in
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="social">
+
+                            X
+
+                        </a>
+
+
+                        <a
+                            href="mailto:your@email.com"
+                            class="social">
+
+                            @
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
 
             </div>
 
 
-            <!-- CURRENTLY LEARNING -->
+            <!-- ================= FOOTER ================= -->
 
-            <div class="card">
+            <div class="footer">
 
-                <h3>
-
-                    <span class="title-icon">✦</span>
-
-                    Currently Learning
-
-                </h3>
-
-
-                <div class="skills">
-
-                    <div class="skill">
-                        DSA
-                    </div>
-
-                    <div class="skill">
-                        Advanced JavaScript
-                    </div>
-
-                    <div class="skill">
-                        Spring Boot
-                    </div>
-
-                    <div class="skill">
-                        AWS
-                    </div>
-
-                    <div class="skill">
-                        AI Tools
-                    </div>
-
-                </div>
+                Built with HTML & CSS • Aditya Singh
 
             </div>
 
@@ -840,9 +1315,6 @@
 
     </div>
 
-</div>
-
 
 </body>
 </html>
-```
