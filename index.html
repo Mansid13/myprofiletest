@@ -4,127 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Profile</title>
+
+    <title>My Profile</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
         }
 
-        .profile {
-            width: 70%;
-            margin: 50px auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, #6c63ff55, transparent 35%),
+                radial-gradient(circle at bottom right, #00d4ff44, transparent 35%),
+                #080b16;
+
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
         }
 
-        .profile img {
+        /* Main Profile Card */
+
+        .profile-card {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Cover */
+
+        .cover {
+            height: 220px;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6c63ff,
+                    #8b5cf6,
+                    #00bfff
+                );
+        }
+
+        .cover::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            top: -150px;
+            right: -80px;
+        }
+
+        .cover::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            bottom: -100px;
+            left: 20%;
+        }
+
+        /* Profile Section */
+
+        .profile-content {
+            padding: 0 50px 45px;
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: flex-end;
+            gap: 25px;
+            margin-top: -75px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Avatar */
+
+        .avatar {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            object-fit: cover;
+
+            border: 6px solid #101322;
+
+            background: linear-gradient(135deg, #8b5cf6, #00d4ff);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 55px;
+            font-weight: 700;
+
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
 
-        h1 {
-            color: #333;
+        .profile-name {
+            padding-bottom: 12px;
+        }
+
+        .profile-name h1 {
+            font-size: 34px;
             margin-bottom: 5px;
         }
 
-        h2 {
-            color: #555;
-            font-size: 20px;
+        .profile-name p {
+            color: #aeb4c8;
+            font-size: 16px;
         }
 
-        p {
-            color: #666;
-            line-height: 1.6;
+        /* Online indicator */
+
+        .online {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            background: rgba(34,197,94,0.12);
+            color: #4ade80;
+
+            padding: 6px 12px;
+            border-radius: 20px;
+
+            font-size: 12px;
+            margin-top: 10px;
         }
 
-        .details {
-            text-align: left;
-            margin-top: 25px;
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #4ade80;
         }
 
-        .details h3 {
-            color: #333;
+        /* Buttons */
+
+        .actions {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+            padding-bottom: 12px;
         }
 
-        .details ul {
-            line-height: 2;
+        button {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
-        .contact {
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #eee;
-            border-radius: 10px;
+        .edit-btn {
+            background: linear-gradient(135deg, #7c3aed, #6366f1);
+            color: white;
         }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="profile">
-
-        <!-- Profile Picture -->
-        <img src="profile.jpg" alt="Profile Picture">
-
-        <!-- Name and Introduction -->
-        <h1>Your Name</h1>
-        <h2>Student | Web Developer</h2>
-
-        <p>
-            Hello! I am a student interested in technology and web development.
-            I enjoy learning new skills, creating projects, and exploring new ideas.
-        </p>
-
-        <!-- Personal Details -->
-        <div class="details">
-            <h3>About Me</h3>
-
-            <ul>
-                <li><b>Name:</b> Your Name</li>
-                <li><b>Age:</b> 20</li>
-                <li><b>Education:</b> Bachelor of Engineering</li>
-                <li><b>Branch:</b> Computer Science</li>
-                <li><b>Location:</b> India</li>
-            </ul>
-
-            <h3>My Skills</h3>
-
-            <ul>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>SQL</li>
-            </ul>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="contact">
-            <h3>Contact Me</h3>
-            <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
-            <p>Instagram: <a href="#">@yourusername</a></p>
-            <p>GitHub: <a href="#">github.com/yourusername</a></p>
-        </div>
-
-    </div>
-
-</body>
-</html>
+        .edit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px
 ```
